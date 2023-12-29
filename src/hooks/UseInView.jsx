@@ -9,7 +9,6 @@ const useIsInViewport = (options = {}) => {
         entries.forEach((entry) => {
             const element = document.querySelectorAll('li a')
             if (entry.isIntersecting) {
-                alert(window.innerWidth)
                 element.forEach(el => {
                     if (el.className.includes(entry.target.id)) {
                         el.classList.add('active')
