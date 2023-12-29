@@ -3,7 +3,7 @@
 const Card = ({ data }) => {
     return (
 
-        <div className="h-[560px] l:w-[350px] s:w-[260px] s:h-[580px] xs:w-[90%] xsm:flex-row xsm:w-full xsm:h-[350px] flex flex-col bg-white border border-gray-200 rounded-lg s:flex-col shadow dark:bg-gray-800 dark:border-gray-700 hover:scale-105 smd:w-[360px] xmd:w-[300px]">
+        <div className="h-[560px] l:w-[350px] max-w-sm s:w-[260px] s:h-[580px] xs:w-[90%] xsm:flex-row xsm:w-full xsm:h-[350px] flex flex-col bg-white border border-gray-200 rounded-lg s:flex-col shadow dark:bg-gray-800 dark:border-gray-700 hover:scale-105 smd:w-[360px] xmd:w-[300px]">
 
             <div className="h-[350px] w-full xsm:w-[50%] s:w-full">
                 <img className=" object-cover w-full h-full" src={data.img} alt="product image" />
