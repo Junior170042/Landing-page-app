@@ -18,7 +18,7 @@ const Quality = () => {
                 <Button label="See more" size="w-1/2 xx:w-full" mT="mt-8" icon={arrowRight} />
             </div>
 
-            <div className="flex-1 xx:ml-[50px] xx:w-[320px] bg-card bg-center bg-cover rounded-lg flex items-center justify-center hover:scale-105">
+            <div className="flex-1 xx:ml-[50px] xx:w-[320px] bg-card bg-center bg-cover smd:mt-32 rounded-lg flex items-center justify-center hover:scale-105">
                 <img src={smartwatch} alt="smartWatch" className="object-cover" width={600} />
             </div>
 

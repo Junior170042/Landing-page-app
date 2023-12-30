@@ -13,7 +13,7 @@ const NavBar = () => {
                 <a href="/" className="l:absolute l:left-1 l:top-0">
                     <img src={Logo} alt="Logo" width={40} height={40} />
                 </a>
-                <ul className="-mt-12 l:mt-2 flex-1 flex justify-end items-center gap-16 md:hidden pr-10">
+                <ul className="-mt-12 l:mt-2 flex-1 flex justify-end smd:justify-end items-center gap-16 md:hidden pr-10">
                     {navLinks.map(link => (
                         <li key={link.label}><a className={` ${link.class} font-montserrat leading-normal text-lg text-slate-gray hover:text-deep-orange-500`} href={link.href}>{link.label}</a></li>
                     ))}
