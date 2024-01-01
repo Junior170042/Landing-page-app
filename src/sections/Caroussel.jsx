@@ -2,10 +2,16 @@
 import { Carousel } from "@material-tailwind/react";
 import { macBooks } from '../constants';
 import CarouselCard from './CarouselCard';
+import animateObserve from "../hooks/AnimationObserver";
+
+
 
 const Caroussel = () => {
+
+    const { animateRef } = animateObserve({}, "animate__fadeIn")
+
     return (
-        <Carousel transition={{ duration: .8 }} className="rounded-xl">
+        <Carousel ref={animateRef} transition={{ duration: .8 }} className="rounded-x carousel">
 
             {macBooks.map((macBook) => <CarouselCard key={macBook.price} macBook={macBook} />)}
 

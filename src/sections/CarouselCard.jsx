@@ -1,6 +1,8 @@
 import React from 'react'
 
+
 const CarouselCard = ({ macBook }) => {
+
     return (
         <div className=" w-full bg-blue-gray-200 flex mdl:flex-col justify-center items-center">
 

@@ -1,13 +1,17 @@
 import { arrowRight } from "../assets/icons";
 import { smartwatch } from "../assets/images";
 import Button from "../components/Button";
+import animateObserve from "../hooks/AnimationObserver";
+
 
 
 const Quality = () => {
+    const refOfferText = animateObserve({}, "animate__fadeIn");
+    const refOfferImage = animateObserve({}, "animate__fadeIn");
     return (
-        <section id="about" className="flex  justify-between items-center mdl:flex-col  gap-20">
+        <section id="about" className="flex  justify-between items-center mdl:flex-col mt-12  gap-20">
 
-            <div className="flex-1 flex flex-col">
+            <div ref={refOfferText.animateRef} className="flex-1 flex flex-col offer-text">
                 <h2 className="text-4xl xs:text-3xl font-montserrat leading-normal font-bold text-slate-900">
                     We also bring you our popular <span className="text-coral-red"> smartWatches!</span>
                 </h2>
@@ -18,8 +22,8 @@ const Quality = () => {
                 <Button label="See more" size="w-1/2 xx:w-full" mT="mt-8" icon={arrowRight} />
             </div>
 
-            <div className="flex-1 xx:ml-[50px] xx:w-[320px] bg-card bg-center bg-cover smd:mt-32 rounded-lg flex items-center justify-center hover:scale-105">
-                <img src={smartwatch} alt="smartWatch" className="object-cover" width={600} />
+            <div ref={refOfferImage.animateRef} className="img-offer flex-1 xx:ml-[50px] xx:w-[320px] bg-card bg-center bg-cover smd:mt-32 rounded-lg flex items-center justify-center hover:scale-105">
+                <img src={smartwatch} alt="smartWatch" className="object-cover" width={560} />
             </div>
 
         </section>
