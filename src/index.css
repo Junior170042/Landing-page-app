@@ -1,11 +1,19 @@
-
-/* google import font */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --primary: #a78bfa;
+  /* Lavender */
+  --secondary: #34d399;
+  /* Mint */
+  --accent: #fb7185;
+  /* Rose */
+  --bg-soft: #f8fafc;
+  --glass: rgba(255, 255, 255, 0.7);
+}
 
 * {
   margin: 0;
@@ -14,57 +22,41 @@
   scroll-behavior: smooth;
 }
 
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-soft);
+  color: #1e293b;
+  overflow-x: hidden;
+}
 
 @layer components {
   .max-container {
     max-width: 1440px;
     margin: 0 auto;
   }
-  .offer-text, .img-offer{
-    opacity: .4;
-    transition: .6s;
+
+  .glassmorphism {
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
   }
 
-  .popular-card{
-    opacity: 0;
-    transition: opacity .6s ease-in;
-    animation-duration: .6s;
+  .cute-shadow {
+    box-shadow: 0 10px 25px -5px rgba(167, 139, 250, 0.1), 0 8px 10px -6px rgba(167, 139, 250, 0.1);
   }
 
-  .popular-description.animate__animated{
-    animation-delay: .5s;
+  .btn-cute {
+    @apply px-6 py-3 rounded-2xl font-semibold transition-all duration-300 transform active:scale-95 flex items-center justify-center gap-2;
+    background: linear-gradient(135deg, var(--primary), #8b5cf6);
+    color: white;
   }
 
-  .carousel{
-    opacity:0.1
+  .btn-cute:hover {
+    @apply shadow-lg;
+    filter: brightness(1.1);
+    transform: translateY(-2px);
   }
-
-  .carousel.animate__animated{
-    opacity:1
-  }
-
-  .popular-card.animate__animated{
-    opacity: 1;
-  }
-  .offer-text.animate__animated{
-    animation-duration: 1s;
-    opacity: 1;
-  }
-  .img-offer.animate__animated{
-    animation-delay: 0.6;
-    animation-duration: 1s;
-    opacity: 1;
-  }
-
-  .card-product{
-    opacity: 0.3;
-    transition: opacity 0.6s ease-in;
-  }
-
-  .card-product.animate__animated{
-    opacity: 1;
-  }
-
 }
 
 @layer utilities {
@@ -76,31 +68,46 @@
     @apply sm:px-16 px-8;
   }
 
-  .active{
-    @apply border-b-2 border-deep-orange-500
-  }
-
   .padding-y {
     @apply sm:py-24 py-12;
   }
 
-  .padding-l {
-    @apply sm:pl-16 pl-8;
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, var(--primary), var(--accent));
   }
 
-  .padding-r {
-    @apply sm:pr-16 pr-8;
+  .bg-lavender {
+    background-color: var(--primary);
   }
 
-  .padding-t {
-    @apply sm:pt-24 pt-12;
+  .bg-mint {
+    background-color: var(--secondary);
   }
 
-  .padding-b {
-    @apply sm:pb-24 pb-12;
+  .bg-rose {
+    background-color: var(--accent);
   }
 
-  .info-text {
-    @apply font-montserrat text-slate-gray text-lg leading-7;
+  .soft-transition {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8b5cf6;
 }

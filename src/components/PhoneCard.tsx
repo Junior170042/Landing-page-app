@@ -1,12 +1,20 @@
+import { Phone } from '../constants';
 
-const PhoneCard = ({ phoneImage, changePhone, currentPhone }) => {
+interface PhoneCardProps {
+    phoneImage: Phone;
+    changePhone: (bigPhone: string) => void;
+    currentPhone: string;
+}
+
+const PhoneCard = ({ phoneImage, changePhone, currentPhone }: PhoneCardProps) => {
 
     const handleClick = () => {
-        if (currentPhone !== phoneImage.bigPhone) { changePhone(phoneImage.bigPhone); }
+        if (currentPhone !== phoneImage.bigPhone) {
+            changePhone(phoneImage.bigPhone);
+        }
     }
     return (
         <div className={`border-2 rounded-xl
-
             ${currentPhone === phoneImage.bigPhone ? 'border-coral-red' : 'border-transparent'}
             cursor-pointer max-sm:flex-1
         `}

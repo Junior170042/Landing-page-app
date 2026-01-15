@@ -1,11 +1,14 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
-const useIsInViewport = (options = {}) => {
+interface UseIsInViewportOptions extends IntersectionObserverInit {
+    // Add any custom options if needed, but currently it uses IntersectionObserverInit
+}
+
+const useIsInViewport = (options: UseIsInViewportOptions = {}) => {
     const { threshold = 0, rootMargin = "50px" } = options;
-    //const [isInViewport, setIsInViewport] = useState(false);
-    const targetRef = useRef(null);
+    const targetRef = useRef<HTMLElement | null>(null);
 
-    const handleIntersection = (entries) => {
+    const handleIntersection: IntersectionObserverCallback = (entries) => {
         entries.forEach((entry) => {
             const element = document.querySelectorAll('li a')
             if (entry.isIntersecting) {
@@ -15,13 +18,11 @@ const useIsInViewport = (options = {}) => {
                     }
                 })
             } else {
-
                 element.forEach(el => {
                     if (el.className.includes(entry.target.id)) {
                         el.classList.remove('active')
                     }
                 })
-
             }
         });
     };
@@ -31,16 +32,17 @@ const useIsInViewport = (options = {}) => {
             threshold, rootMargin
         });
 
-        if (targetRef.current) {
-            observer.observe(targetRef.current);
+        const currentTarget = targetRef.current;
+        if (currentTarget) {
+            observer.observe(currentTarget);
         }
 
         return () => {
-            if (targetRef.current) {
-                observer.unobserve(targetRef.current);
+            if (currentTarget) {
+                observer.unobserve(currentTarget);
             }
         };
-    }, [threshold]);
+    }, [threshold, rootMargin]);
 
     return { targetRef };
 };

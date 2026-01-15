@@ -7,7 +7,14 @@ import {
     headPhone3, watch, watch1, watch2,
 } from "../assets/supliesImages";
 
-export const suplies = [
+export interface Supply {
+    name: string;
+    description: string;
+    img: string;
+    price: string;
+}
+
+export const suplies: Supply[] = [
     {
         name: "New model watch",
         description: "A new model watch that will watch your changes!",
@@ -52,7 +59,14 @@ export const suplies = [
     },
 ]
 
-export const macBooks = [
+export interface MacBook {
+    name: string;
+    description: string;
+    img: string;
+    price: string;
+}
+
+export const macBooks: MacBook[] = [
     {
         name: "Imac Pro",
         description: "Imac Pro is your computer that can bring you a new feeling of working!",
@@ -79,14 +93,25 @@ export const macBooks = [
     },
 ]
 
-export const navLinks = [
+export interface NavLink {
+    href: string;
+    label: string;
+    class: string;
+}
+
+export const navLinks: NavLink[] = [
     { href: "#toHome", label: "Home", class: "#toHome" },
     { href: "#toAbout", label: "About Us", class: "#toAbout" },
     { href: "#toProduct", label: "Products", class: "#toProduct" },
     { href: "#toContacts", label: "Contact Us", class: "#toContacts" },
 ];
 
-export const phones = [
+export interface Phone {
+    thumbnail: string;
+    bigPhone: string;
+}
+
+export const phones: Phone[] = [
     {
         thumbnail: tubigPhone1,
         bigPhone: bigPhone1,
@@ -101,14 +126,24 @@ export const phones = [
     },
 ];
 
-export const statistics = [
+export interface Statistic {
+    value: string;
+    label: string;
+}
+
+export const statistics: Statistic[] = [
     { value: '2k+', label: 'Brands' },
     { value: '300+', label: 'Shops' },
     { value: '800k+', label: 'Customers' },
 ];
 
+export interface Product {
+    imgURL: string;
+    name: string;
+    price: string;
+}
 
-export const products = [
+export const products: Product[] = [
     {
         imgURL: bigPhone3,
         name: "Iphone 15",
@@ -147,7 +182,13 @@ export const products = [
     },
 ];
 
-export const services = [
+export interface Service {
+    imgURL: string;
+    label: string;
+    subtext: string;
+}
+
+export const services: Service[] = [
     {
         imgURL: truckFast,
         label: "Free shipping",
@@ -165,11 +206,12 @@ export const services = [
     },
 ];
 
+export interface SocialMedia {
+    src: string;
+    alt: string;
+}
 
-
-
-
-export const socialMedia = [
+export const socialMedia: SocialMedia[] = [
     { src: facebook, alt: "facebook logo" },
     { src: twitter, alt: "twitter logo" },
     { src: instagram, alt: "instagram logo" },
