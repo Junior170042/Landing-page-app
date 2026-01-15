@@ -2,7 +2,7 @@
 
 A modern, high-conversion landing page designed with a "cute premium" aesthetic, featuring immersive 3D-style animations and a fully functional (simulated) shopping cart system.
 
-![Portfolio Preview](public/preview-placeholder.png) *(Recommended: Replace with a screenshot of your beautiful redesign)*
+![Portfolio Preview](public/preview-placeholder.png) 
 
 ## ✨ Design Philosophy
 
